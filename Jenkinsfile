@@ -7,7 +7,7 @@ pipeline {
         
         stage ('checkout'){
             steps {
-            git  https://github.com/Siddhartha-Rastogi/srinu.git'
+            git  'https://github.com/Siddhartha-Rastogi/srinu.git'
             }
         }
 

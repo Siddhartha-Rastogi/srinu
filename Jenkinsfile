@@ -7,7 +7,7 @@ pipeline {
         
         stage ('checkout'){
             steps {
-            git  'https://github.com/dineshreddy6461/srinu.git'
+            git  https://github.com/Siddhartha-Rastogi/srinu.git'
             }
         }
 
@@ -50,7 +50,7 @@ pipeline {
         stage ('package') {
 
             steps {
-
+                
                 withMaven(maven : '/opt/mvn/apache-maven-3.6.3') {
 
                     sh 'mvn package'

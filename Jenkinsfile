@@ -15,11 +15,11 @@ pipeline {
 
             steps {
 
-
+                withMaven(maven : '/opt/mvn/apache-maven-3.6.3') {
 
                     sh 'mvn clean compile'
 
-
+                }
 
             }
 
@@ -33,11 +33,11 @@ pipeline {
 
             steps {
 
-          
+                withMaven(maven : '/opt/mvn/apache-maven-3.6.3') {
 
                     sh 'mvn test'
 
-         
+                }
 
             }
 
@@ -50,13 +50,13 @@ pipeline {
         stage ('package') {
 
             steps {
-                
- 
+
+                withMaven(maven : '/opt/mvn/apache-maven-3.6.3') {
 
                     sh 'mvn package'
                    
 
-
+                }
 
             }
 
@@ -68,13 +68,13 @@ pipeline {
             steps {
                 sh 'who am i'
                 
-                   
+                                withMaven(maven : '/opt/mvn/apache-maven-3.6.3') {
 
            sh 'cp /var/lib/jenkins/workspace/demopipe2/target/TomcatMavenApp-2.0.war /home/dineshreddy99077/noida/apache-tomcat-7.0.103/webapps/'
                 
                 sh 'mvn deploy'
                
-     
+            }
             }
             }
      
@@ -82,4 +82,3 @@ pipeline {
 
     }
 }
-
